@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  skip_before_filter :verify_authenticity_token, if: :json_request?
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   # GET /tasks
@@ -72,6 +73,10 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name)
+      if json_request?
+        ActionController::Parameters.new(params).permit(:name)
+      else
+        params.require(:task).permit(:name)
+      end
     end
 end
