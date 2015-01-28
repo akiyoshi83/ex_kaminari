@@ -5,6 +5,9 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.page params[:page]
+    # api-paginationでLinkヘッダを返す
+    # skip_renderを指定しないとjbuilderの処理前にレスポンスが帰ってしまう
+    paginate @tasks, skip_render: true
   end
 
   # GET /tasks/1
