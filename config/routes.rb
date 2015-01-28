@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  root 'tasks#index'
   resources :tasks
+
+  # resouces :tasksの後に記述しないとページャのURLが/?page=1とかになってしまう
+  root 'tasks#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
