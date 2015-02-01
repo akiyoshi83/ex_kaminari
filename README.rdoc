@@ -1,28 +1,18 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+Rails4.2でのkaminari + api-paginationのサンプル。
+HTMLとJSONでのページングを実装する例。
 
 * Ruby version
 
-* System dependencies
+2.2.0
 
-* Configuration
+* Rails version
 
-* Database creation
+4.2.0
 
-* Database initialization
+* Other
 
-* How to run the test suite
+kaminari (0.16.2)
+api-pagination (4.0.0)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
